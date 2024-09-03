@@ -10,7 +10,7 @@ class Coffee:
         return self._name
 
     @name.setter
-    def name(self, value):
+    def name(self, name):
         pass
 
     def orders(self):
@@ -22,10 +22,11 @@ class Coffee:
     def num_orders(self):
         return len(self._orders)
 
-    def average_price(self):
+    def average_price(self): 
         if not self._orders:
             return 0
-        return sum(order.price for order in self._orders) / len(self._orders)
+        else:
+            return sum(order.price for order in self._orders) / len(self._orders)
 
 class Customer:
     def __init__(self, name):
@@ -40,7 +41,7 @@ class Customer:
     def name(self, value):
         if isinstance(value, str) and 1 <= len(value) <= 15:
             self._name = value
-        # If the new value is invalid, we simply don't change the name
+
 
     def orders(self):
         return self._orders
